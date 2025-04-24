@@ -1,4 +1,4 @@
-```import random
+import random
 
 def ruleta(usuario):
     usuario = usuario.title()
