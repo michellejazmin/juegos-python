@@ -32,4 +32,3 @@ def ruleta(usuario):
 
 if __name__ == "__main__":
     ruleta("jugador anónimo")
-```
