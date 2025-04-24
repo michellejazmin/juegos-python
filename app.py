@@ -1,5 +1,7 @@
 from ahorcado import ahorcado
 from tateti import tateti
+from ruleta import ruleta
+from ruleta_rusa import ruleta_rusa
 
 def bienvenida():
     global usuario
@@ -9,19 +11,24 @@ def bienvenida():
 
 def elegir_juego():
     global juego
-    juego = input("¿Qué juego desea jugar? ")
+    juego = input("¿Qué juego querés jugar?\n1: tateti\n2: ahorcado\n3: ruleta\n4: ruleta rusa\nElija el número del juego: ")
+    if juego.isdigit() and 1 <= int(juego) <= 4:
+        juego = juegos_disponibles[int(juego) - 1][1]
+    else:
+        print("Opción inválida. Debe elegir un número entre 1 y 4.")
+        elegir_juego()
     comenzar_juego(juego)
 
 def comenzar_juego(juego):
+    print(f"Iniciando el juego de {juego}...")
     if juego == "tateti":
-        print("Iniciando el juego de tateti...")
         tateti(usuario)
     elif juego == "ahorcado":
-        print("Iniciando el juego de ahorcado...")
         ahorcado(usuario)
-    else:
-        print("El juego elegido no está disponible.")
-        ofrecer_otro_juego()
+    elif juego == "ruleta":
+        ruleta(usuario)
+    elif juego == "ruleta rusa":
+        ruleta_rusa(usuario)
 
 def ofrecer_otro_juego():
     respuesta = input("Desea jugar otro juego? (si/No): ")
@@ -34,6 +41,15 @@ def ofrecer_otro_juego():
         ofrecer_otro_juego()
 
 usuario = ""
+
+juegos_disponibles = [
+    [1, "tateti"],
+    [2, "ahorcado"],
+    [3, "ruleta"],
+    [4, "ruleta rusa"]
+]
+
 juego = ""
+
 bienvenida()
 elegir_juego()
