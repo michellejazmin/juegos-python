@@ -1,9 +1,9 @@
 import random
 
 tablero = [
-        [".", ".", "."],
-        [".", ".", "."],
-        [".", ".", "."]
+        [" ", " ", " "],
+        [" ", " ", " "],
+        [" ", " ", " "]
     ]
 
 estado = "jugando"
@@ -11,18 +11,18 @@ turnos_jugados = 0
 
 def imprimir_tablero():
     global tablero
-    ancho = len(tablero[0]) * 3 + 4
-    for i in range(ancho):
-        print("-", end="")
-    print()   
+    ancho = 9
+   
     for fila in range(len(tablero)):
-        print("|", end="  ")
         for columna in range(len(tablero[fila])):
-            print(tablero[fila][columna], end="  ")
-        print("|")
-    for i in range(ancho):
-        print("-", end="")
-    print()
+            if columna < 2:
+                print(tablero[fila][columna], end=" | ")
+            else:
+                print(tablero[fila][columna], end="\n")
+        if fila < 2:
+            for i in range(ancho):
+                print("-", end="")
+            print()
 
 def posicion(pos):
     indice = int(input(f"{pos.title()}: ")) - 1
@@ -115,6 +115,8 @@ def tateti(usuario):
     global estado
     global turnos_jugados
     usuario = usuario.title()
+    print(f"¡Hola, {usuario}! Bienvenido/a al juego de tateti.")
+    print("El tablero es de 3x3. Ingresá la fila y la columna (1, 2 o 3) donde querés jugar.")
 
     while estado == "jugando":
         jugar_turno_jugador(usuario)
@@ -134,4 +136,4 @@ def tateti(usuario):
         print("Es un empate :/")
 
 if __name__ == "__main__":
-    tateti("usuario")
+    tateti("jugador")
