@@ -1,6 +1,8 @@
+# Juegos en Python
+
 Este proyecto es una colección de juegos clásicos implementados en Python. Está diseñado para ejecutarse desde la terminal y permite a los usuarios elegir entre varios juegos interactivos. A continuación, se describe la estructura del proyecto, los juegos disponibles y su funcionamiento:
 
-# Estructura del Proyecto
+## Estructura del Proyecto
 El proyecto tiene la siguiente estructura de archivos:
 
 - `app.py`: Archivo principal que actúa como punto de entrada al programa. Gestiona la interacción con el usuario, permite elegir un juego y coordina la ejecución de los mismos.
@@ -10,7 +12,7 @@ El proyecto tiene la siguiente estructura de archivos:
 - `ruleta_rusa.py`: Implementa el juego de la ruleta rusa.
 - `.gitignore`: Archivo que especifica qué archivos o directorios deben ser ignorados por Git (como __pycache__ y entornos virtuales).
 
-# Descripción de los juegos
+## Descripción de los juegos
 
 1. Ahorcado (ahorcado.py):
 El usuario debe adivinar una palabra secreta letra por letra.
@@ -29,7 +31,7 @@ Dos jugadores (el usuario y un oponente) se turnan para disparar un revólver co
 El tambor tiene 5 posiciones vacías y 1 bala, que se coloca aleatoriamente.
 El juego termina si un jugador dispara y la bala está en el tambor, o si ambos sobreviven tras 5 turnos.
 
-# Funcionamiento del Programa Principal (app.py)
+## Funcionamiento del Programa Principal (app.py)
 1. Bienvenida:
 El programa solicita el nombre del usuario y lo saluda.
 2. Selección de juego:
@@ -43,13 +45,13 @@ Al finalizar un juego, el programa pregunta si el usuario desea jugar otro.
 Si el usuario responde afirmativamente, se reinicia el proceso de selección de juego.
 Si responde negativamente, el programa se despide y termina.
 
-# Aspectos técnicos
+## Aspectos técnicos
 - **Modularidad**: cada juego está implementado en un archivo separado, lo que facilita la organización y el mantenimiento del código.
 - **Interactividad**: el programa utiliza funciones como `input()` para interactuar con el usuario, lo que lo hace dinámico y fácil de usar.
 - **Aleatoriedad**: los juegos como la ruleta, la ruleta rusa y el tateti utilizan el módulo `random` para generar resultados impredecibles, aumentando la rejugabilidad.
 - **Control de errores**: Se manejan entradas inválidas mediante validaciones y mensajes claros para el usuario.
 
-# Posibles mejoras
+## Posibles mejoras
 1. Ampliar la Lista de Palabras en Ahorcado:
      - Utilizar una lista de palabras aleatorias en lugar de una palabra fija.
 2. Persistencia de Datos:

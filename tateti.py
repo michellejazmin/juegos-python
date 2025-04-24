@@ -33,7 +33,13 @@ def jugar_turno_jugador(usuario):
 
     print(f"Turno de {usuario}...")
     fila = posicion("fila")
+    while fila < 0 or fila > 2:
+        print("La fila debe ser 1, 2 o 3.")
+        fila = posicion("fila")
     columna = posicion("columna")
+    while columna < 0 or columna > 2:
+        print("La columna debe ser 1, 2 o 3.")
+        columna = posicion("columna")
 
     if tablero[fila][columna] not in ["X", "O"]:
         tablero[fila][columna] = "X"
@@ -136,4 +142,4 @@ def tateti(usuario):
         print("Es un empate :/")
 
 if __name__ == "__main__":
-    tateti("jugador")
+    tateti("jugador anónimo")
