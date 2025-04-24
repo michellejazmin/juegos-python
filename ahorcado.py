@@ -4,7 +4,7 @@ def ahorcado(usuario):
     print("Adiviná la palabra secreta letra por letra.")
     print("Tenés 6 intentos para adivinar la palabra.")
     # Definir la palabra secreta
-    palabra_secreta = "algoritmo"
+    palabra_secreta = "algoritmo" # acá podríamos agregar una lista con más opciones y seleccionar una de manera aleatoria
     letras_adivinadas = []
     intentos = 6
     palabra_oculta = "_" * len(palabra_secreta)
