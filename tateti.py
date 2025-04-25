@@ -16,13 +16,14 @@ def imprimir_tablero():
     for fila in range(len(tablero)):
         for columna in range(len(tablero[fila])):
             if columna < 2:
-                print(tablero[fila][columna], end=" | ")
+                print("",tablero[fila][columna], end=" |")
             else:
-                print(tablero[fila][columna], end="\n")
+                print("", tablero[fila][columna], end="\n")
         if fila < 2:
-            for i in range(ancho):
-                print("-", end="")
-            print()
+            for i in range(2):
+                print("---", end="")
+                print("+", end="")
+            print("---")
 
 def posicion(pos):
     indice = int(input(f"{pos.title()}: ")) - 1
@@ -31,7 +32,7 @@ def posicion(pos):
 def jugar_turno_jugador(usuario):
     global turnos_jugados
 
-    print(f"Turno de {usuario}...")
+    print(f"\nTurno de {usuario}...")
     fila = posicion("fila")
     while fila < 0 or fila > 2:
         print("La fila debe ser 1, 2 o 3.")
@@ -57,7 +58,7 @@ def jugar_turno_maquina():
     if tablero[fila][columna] not in ["X", "O"]:
         tablero[fila][columna] = "O"
         turnos_jugados += 1
-        print("Turno de la computadora...")
+        print("\nTurno de la computadora...")
         imprimir_tablero()
     else:
         jugar_turno_maquina()
@@ -135,11 +136,11 @@ def tateti(usuario):
             evaluar_resultado()
     
     if estado == "ganado":
-        print(f"¡Felicitaciones, {usuario}! Ganaste el juego :)")
+        print(f"\n¡Felicitaciones, {usuario}! Ganaste el juego :)")
     elif estado == "perdido":
-        print("Seguí participando :(")
+        print("\nSeguí participando :(")
     else:
-        print("Es un empate :/")
+        print("\nEs un empate :/")
 
 if __name__ == "__main__":
     tateti("jugador anónimo")
